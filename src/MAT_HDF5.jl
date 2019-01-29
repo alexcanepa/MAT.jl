@@ -607,7 +607,7 @@ function read(obj::HDF5Object, ::Type{Bool})
 end
 
 # copied from HDF5.jl/src/HDF5.jl#L1306
-function read(obj::HDF5Object, ::Type{Array{Bool}})
+function read(obj::HDF5Dataset, ::Type{Array{Bool,N} where N})
     if HDF5.isnull(obj)
         return Bool[]
     end
